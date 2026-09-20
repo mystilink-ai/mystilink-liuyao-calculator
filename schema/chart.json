@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mystilink.liuyao.chart/0.1",
+  "title": "Mystilink Liu Yao Chart",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "seed",
+    "order",
+    "lines",
+    "original_bits",
+    "resulting_bits",
+    "has_moving"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "mystilink.liuyao.chart/0.1"
+    },
+    "seed": { "type": ["integer", "null"] },
+    "order": { "type": "string", "const": "bottom_to_top" },
+    "lines": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["index", "name", "yin_yang", "moving", "label", "sum", "binary"],
+        "properties": {
+          "index": { "type": "integer", "minimum": 1, "maximum": 6 },
+          "name": { "type": "string" },
+          "yin_yang": { "type": "string", "enum": ["yin", "yang"] },
+          "moving": { "type": "boolean" },
+          "label": {
+            "type": "string",
+            "enum": ["old_yang", "young_yang", "young_yin", "old_yin"]
+          },
+          "sum": { "type": "integer", "enum": [6, 7, 8, 9] },
+          "binary": { "type": "integer", "enum": [0, 1] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "original_bits": { "type": "string", "pattern": "^[01]{6}$" },
+    "resulting_bits": {
+      "oneOf": [
+        { "type": "string", "pattern": "^[01]{6}$" },
+        { "type": "null" }
+      ]
+    },
+    "has_moving": { "type": "boolean" },
+    "wiki_hint": { "type": "object" }
+  },
+  "additionalProperties": true
+}

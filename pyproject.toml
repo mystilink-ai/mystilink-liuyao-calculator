@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mystilink-liuyao-calculator"
+version = "0.1.0"
+description = "Liu Yao six-casts calculator with JSON CLI"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [{ name = "Mystilink" }]
+keywords = ["liuyao", "yijing", "divination", "cli"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Operating System :: OS Independent",
+  "Environment :: Console",
+  "Topic :: Utilities",
+]
+dependencies = []
+
+[project.scripts]
+liuyao = "mystilink_liuyao.cli:main"
+mystilink-liuyao = "mystilink_liuyao.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+include = ["mystilink_liuyao*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

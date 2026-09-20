@@ -1,0 +1,29 @@
+{
+  "name": "@mystilink/liuyao-calculator",
+  "version": "0.1.0",
+  "description": "Liu Yao calculator binding that invokes liuyao CLI",
+  "license": "MIT",
+  "main": "index.js",
+  "browser": "browser.js",
+  "exports": {
+    ".": {
+      "node": "./index.js",
+      "browser": "./browser.js",
+      "default": "./index.js"
+    },
+    "./browser": "./browser.js"
+  },
+  "files": [
+    "index.js",
+    "browser.js",
+    "cli.js",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "keywords": [
+    "liuyao",
+    "cli"
+  ]
+}

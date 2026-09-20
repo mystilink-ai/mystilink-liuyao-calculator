@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Mystilink.Liuyao</RootNamespace>
+    <AssemblyName>Mystilink.Liuyao</AssemblyName>
+    <Version>0.1.0</Version>
+    <Authors>Mystilink</Authors>
+    <Description>Liu Yao calculator CLI binding</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+</Project>
